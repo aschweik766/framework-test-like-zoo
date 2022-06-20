@@ -7,8 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import Favorites from "./components/Favorites";
 import RemoveFavorites from "./components/RemoveFavorites";
-import DisplayFavorites from "./components/DisplayFavorites";
-import { Routes, Route } from 'react-router-dom';
+// import DisplayFavorites from "./components/DisplayFavorites";
+// import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
   const [animals, setAnimals] = useState([]);
@@ -79,18 +79,19 @@ const App = () => {
           <button onClick={() => {
           resetRandomAnimals(animals)
           }}> Random Search 
-        </button></div>
+        </button>
+      </div>
         
       <div >
         <ListHeader heading='Animals'/>
       </div>
-      <div className="row">
-        
-      </div>      
+    
       <div className="row">
           <RandomResults  animals={animals} handleFavClick={addFavAnimal} favComponent={Favorites}/>
       </div>
+
       <br></br>
+
       <div className="row d-flex align-items-center mt-4 mb-4">
         <ListHeader heading='Favorites'/>
       </div>
@@ -99,13 +100,7 @@ const App = () => {
           {/* <Routes>
             <Route path='/favorites' element={<DisplayFavorites favorites={favorites}/>}/>
           </Routes> */}
-          
-            
-      
-         
       </div>
-      
-     
     </div>
   )
 }
